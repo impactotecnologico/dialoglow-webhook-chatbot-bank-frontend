@@ -1,28 +1,34 @@
-import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { DialogflowService } from '@app/services';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MessageFormComponent, MessageItemComponent, MessageListComponent } from '@app/components';
 import { NgModule } from '@angular/core';
-import { SessionExpireService } from './services/sessionExpire.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+import { DialogflowService, SessionExpireService } from '@app/core/services';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
+}
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MessageListComponent,
-    MessageFormComponent,
-    MessageItemComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    AppRoutingModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
   ],
-  providers: [
-    DialogflowService,
-    SessionExpireService
-  ],
-  bootstrap: [AppComponent]
+  providers: [HttpClient, DialogflowService, SessionExpireService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

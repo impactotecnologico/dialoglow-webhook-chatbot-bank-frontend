@@ -1,0 +1,41 @@
+.chatcontrol {
+  float: left;
+  width: 100%;
+
+  .chatinput {
+    width: 85%;
+    float: left;
+    border-radius: 0;
+    border-right-color: transparent;
+  }
+
+  .chatinput:focus {
+    outline: none;
+    border: solid #cccccc 1px;
+  }
+
+  .sendbtn {
+    width: 15%;
+    float: left;
+    border-radius: 0;
+  }
+
+  .btn-primary {
+    background: -moz-linear-gradient(left, #2ed3ae 0%, #16b390 100%) !important;
+    background: -webkit-linear-gradient(left, #2ed3ae 0%, #16b390 100%) !important;
+    background: linear-gradient(to right, #2ed3ae 0%, #16b390 100%) !important;
+    color: #fff;
+    border-color: transparent !important;
+    cursor: pointer;
+  }
+
+  .btn-primary:active {
+    background-color: transparent !important;
+    border-color: transparent !important;
+  }
+
+  .btn-primary.focus, .btn-primary:focus {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+}

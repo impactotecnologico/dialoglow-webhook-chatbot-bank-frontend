@@ -1,0 +1,64 @@
+.chatform {
+  width: 400px;
+  margin: 0 auto;
+  // margin-top: 50px;
+}
+
+.chat-box {
+  // display: none;
+  opacity: 0;
+  background: #efefef;
+  position: fixed;
+  right: 20px;
+  bottom: 0px;
+  width: 400px;
+  max-width: 85vw;
+  max-height: 100vh;
+  border-radius: 5px;
+  z-index: 999;
+  pointer-events: none;
+  transition: all 0.7s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+#chat-circle {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  background: #2ed3ae;
+  background: -moz-linear-gradient(left, #2ed3ae 0%, #16b390 100%);
+  background: -webkit-linear-gradient(left, #2ed3ae 0%, #16b390 100%);
+  background: linear-gradient(to right, #2ed3ae 0%, #16b390 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d4ac7', endColorstr='#a733bb', GradientType=1);
+  border: 2px solid #ffffff;
+  width: 70px;
+  height: 70px;
+  line-height: 50px;
+  border-radius: 10px 10px 0 10px;
+  cursor: pointer;
+  z-index: 102;
+
+  i {
+    color: #fff;
+    font-size: 2.3rem;
+    position: relative;
+    top: 5px;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.show-box {
+  opacity: 1;
+  bottom: 50px;
+  pointer-events: auto;
+}

@@ -1,0 +1,13 @@
+<div class="chatcontrol">
+  <input
+    type="text"
+    class="form-control chatinput"
+    (keyup)="onKey($event)"
+    (keyup.enter)="sendMessage()"
+    [(ngModel)]="message.content"
+  />
+  <!-- <button class="btn btn-primary sendbtn" (click)="sendMessage()">{{ 'btnSend' | translate }}</button> -->
+  <button class="btn btn-primary sendbtn" (click)="sendMessage()">
+    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+  </button>
+</div>

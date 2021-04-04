@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div [ngClass]="btnChat ? 'hidden' : 'visible'">
+  <div id="chat-circle" class="btn btn-raised" (click)="eventChat()">
+    <i class="fa fa-commenting" aria-hidden="true"></i>
+  </div>
+</div>
+
+<div class="chat-box" [ngClass]="btnChat ? 'show-box' : ''">
+  <div class="chatform">
+    <message-list [messages]="messages"></message-list>
+    <message-form [message]="message" [messages]="messages"></message-form>
+  </div>
+</div>
+
